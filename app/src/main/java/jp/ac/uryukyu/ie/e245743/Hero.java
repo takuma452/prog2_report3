@@ -9,10 +9,10 @@ package jp.ac.uryukyu.ie.e245743;
  * Created by tnal on 2016/11/13.
  */
 public class Hero {
-    public String name;
-    public int hitPoint;
-    public int attack;
-    public boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -29,13 +29,72 @@ public class Hero {
     }
 
     /**
+     * 名前を参照するメソッド。
+     */
+    public String getterName(){
+        return this.name;
+    }
+
+   
+    /**
+     * HPを参照するメソッド。
+     */
+    public int getterHitpoint(){
+        return this.hitPoint;
+    }
+
+
+    /**
+     * 攻撃力を参照するメソッド。
+     */
+    public int getterAttack(){
+        return this.attack;
+    }
+
+
+    /**
+     * 生死状態を参照するメソッド。
+     */
+    public boolean getterDead(){
+        return this.dead;
+    }
+
+    /**
+     * 名前を変更するメソッド。
+     */
+    public void setterName(String name){
+        this.name = name;
+    }
+
+    /**
+     * HPを変更するメソッド。
+     */
+    public void setterHitpoint(int hitPoint){
+        this.hitPoint = hitPoint;
+    }
+
+     /**
+     * 攻撃力を変更するメソッド。
+     */
+    public void setterName(int attack){
+        this.attack = attack;
+    }
+
+   /**
+     * 生死状態の判定を変更するメソッド。
+     */
+    public void setterDead(boolean dead){
+        this.dead = dead;
+    }
+
+    /**
      * Enemyへ攻撃するメソッド。
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
      * @param e 攻撃対象
      */
     public void attack(Enemy e){
         int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.name, damage);
+        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.getterName(), damage);
         e.wounded(damage);
     }
 
