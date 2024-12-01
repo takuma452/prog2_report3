@@ -18,7 +18,7 @@ public class LivingThing {
     return this.dead;
   }
 
-  public void setterDead(boolean isDead){
+  public void setDead(boolean isDead){
     this.dead = isDead;
   }
 
@@ -26,12 +26,16 @@ public class LivingThing {
     return this.name;
   }
 
-  public int getterhitPoint(){
+  public int getHitPoint(){
     return this.hitPoint;
   }
 
   public void setterhitPoint(int hitPoint){
     this.hitPoint = hitPoint;
+  }
+
+  public int getAttack() {
+    return attack;
   }
 
   public void attack(LivingThing opponent){

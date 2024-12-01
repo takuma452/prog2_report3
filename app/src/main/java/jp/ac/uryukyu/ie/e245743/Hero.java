@@ -7,10 +7,10 @@ public class Hero extends LivingThing{
 
     @Override
     public void wounded(int damage){
-        super.setterhitPoint(getterhitPoint() - damage);
-            if( super.getterhitPoint() < 0 ) {
-                super.setterDead(true);
-                System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", super.getName());
+        this.setterhitPoint(getHitPoint() - damage);
+            if( this.getHitPoint() < 0 ) {
+                this.setDead(true);
+                System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", this.getName());
             }
     }
 }
